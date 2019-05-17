@@ -34,6 +34,7 @@ const upPassValue = document.querySelector('#passUP');
 
 // getting the reference of message div
 const msg = document.querySelector('#message');
+const msg2 = document.querySelector('#message2');
 
 
 // login listener
@@ -44,7 +45,7 @@ logIn.addEventListener('submit', (e) => {
         .catch(rej => {
 
             // adding class here
-            msg.className = 'alert alert-danger';
+            msg.className = 'alert alert-danger text-center';
 
             // adding text here
             msg.textContent = rej.message;
@@ -65,10 +66,10 @@ signUp.addEventListener('submit', (e) => {
         .then(res => console.log(res))
         .catch(rej => {
             // adding class here
-            msg.className = 'alert alert-danger';
+            msg2.className = 'alert alert-danger danger2 text-center';
 
             // adding text here
-            msg.textContent = rej.message;
+            msg2.textContent = rej.message;
 
             // clearing the error after seconds
             setTimeout(clearDiv, 2700);
@@ -80,10 +81,10 @@ signUp.addEventListener('submit', (e) => {
 // logOut.addEventListener('click',(e)=>{
 // console.log('s')
 // })
-console.log(signUp)
-console.log(logOut)
+
 
 // remove the div here
 const clearDiv = () => {
-    document.querySelector('.alert').remove()
+    document.querySelector('.alert').remove();
+    document.querySelector('.danger2').remove();
 }
