@@ -1,7 +1,4 @@
-// <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
-
-// <!-- TODO: Add SDKs for Firebase products that you want to use
+    // <!-- TODO: Add SDKs for Firebase products that you want to use
     //  https://firebase.google.com/docs/web/setup#config-web-app -->
 
   // Your web app's Firebase configuration
@@ -16,3 +13,9 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+//   getting the references here
+const logIn = document.querySelector('#loginForm');
+const signUp = document.querySelector('#signUp');
+const logOut = document.querySelector();

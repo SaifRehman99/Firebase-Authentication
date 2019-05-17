@@ -29,6 +29,7 @@
                 <div class="card card-body mt-5 border border-info rounded-top h-100">
 
                     <h1 class="text-center">Login</h1>
+                    <p id="message"></p>
 
                     <!-- form here -->
                     <form id="loginForm" class="mt-5 p-3">
@@ -54,7 +55,7 @@
                         </div>
                         <button class="btn btn-primary btn-block" type="submit" id="logIn">Login</button>
                     </form>
-                    <button class="btn btn-primary btn-block"  id="signUp"  data-toggle="modal" data-target="#exampleModalLong">SignUp</button>
+                    <button class="btn btn-primary btn-block"   data-toggle="modal" data-target="#exampleModalLong">SignUp</button>
                     
                     <!-- signup Modal -->
                     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -67,6 +68,7 @@
                                   </button>
                                 </div>
                                 <div class="modal-body">
+                                        <form id="signUp">
                                         <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
@@ -83,6 +85,7 @@
                                                     <input type="password" class="form-control" id="passUP" placeholder="Enter Your Password">
                                                 </div>
                                             </div>
+                                            </form>
 
                                 </div>
                                 <div class="modal-footer">
@@ -97,7 +100,8 @@
     </div>
 </div>
           
-
+// <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
