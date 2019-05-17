@@ -13,9 +13,21 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();
+//   const auth = firebase.auth();
 
-//   getting the references here
+//   getting the references of forms here
 const logIn = document.querySelector('#loginForm');
 const signUp = document.querySelector('#signUp');
-const logOut = document.querySelector();
+const logOut = document.querySelector('#logOut');
+
+// getting the input values here
+const emailValue = document.querySelector('#emailAdd');
+const passValue = document.querySelector('#passAdd')
+
+// login listener
+logIn.addEventListener('submit',(e) => {
+    e.preventDefault();
+    
+    
+    
+})
