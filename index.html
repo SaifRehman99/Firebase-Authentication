@@ -6,6 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+
+    <!-- firebase auth -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -50,58 +57,65 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
                                 </div>
-                                <input type="password" class="form-control" id="passAdd" placeholder="Enter Your Password">
+                                <input type="password" class="form-control" id="passAdd"
+                                    placeholder="Enter Your Password">
                             </div>
                         </div>
                         <button class="btn btn-primary btn-block" type="submit" id="logIn">Login</button>
                     </form>
-                    <button class="btn btn-primary btn-block"   data-toggle="modal" data-target="#exampleModalLong">SignUp</button>
-                    
+                    <button class="btn btn-primary btn-block" data-toggle="modal"
+                        data-target="#exampleModalLong">SignUp</button>
+
                     <!-- signup Modal -->
-                    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                              <div class="modal-content">
+                    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLongTitle">Create Account</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Create Account</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
                                 <div class="modal-body">
-                                        <form id="signUp">
+                                    <form id="signUp">
                                         <div class="form-group">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                                    </div>
-                                                    <input type="email" class="form-control" id="emailUP" placeholder="Enter Your Email">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
                                                 </div>
+                                                <input type="email" class="form-control" id="emailUP"
+                                                    placeholder="Enter Your Email">
                                             </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
-                                                    </div>
-                                                    <input type="password" class="form-control" id="passUP" placeholder="Enter Your Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i
+                                                            class="fas fa-unlock-alt"></i></span>
                                                 </div>
+                                                <input type="password" class="form-control" id="passUP"
+                                                    placeholder="Enter Your Password">
                                             </div>
-                                            </form>
+                                        </div>
+                                        <div class="modal-footer d-flex justify-content-center">
+                                            <button type="submit" class="btn btn-secondary">Create User</button>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Done</button>
+
+                                        </div>
+                                    </form>
 
                                 </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" >Create User</button>
-                                </div>
-                              </div>
                             </div>
-                          </div>
-                    
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
-          
-// <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -117,9 +131,9 @@
     </body>
     <script src="scripts/app.js"></script>
     <script>
-    $('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
-</script>
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })
+    </script>
 
 </html>

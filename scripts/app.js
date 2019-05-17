@@ -1,6 +1,3 @@
-    // <!-- TODO: Add SDKs for Firebase products that you want to use
-    //  https://firebase.google.com/docs/web/setup#config-web-app -->
-
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyCjkfvYeudQvegto1XRSUW5i5LSpa1aeJY",
@@ -18,16 +15,41 @@
 //   getting the references of forms here
 const logIn = document.querySelector('#loginForm');
 const signUp = document.querySelector('#signUp');
-const logOut = document.querySelector('#logOut');
+const logOut = document.querySelector('#ok');
+const createUser = document.querySelector('#createUser')
 
-// getting the input values here
+// getting the login input values here
 const emailValue = document.querySelector('#emailAdd');
 const passValue = document.querySelector('#passAdd')
+
+// getting the signup input values here
+const upEmailValue =document.querySelector('#emailUP');
+const upPassValue =document.querySelector('#passUP');
 
 // login listener
 logIn.addEventListener('submit',(e) => {
     e.preventDefault();
-    
+    firebase.auth().signInWithEmailAndPassword(emailValue.value,passValue.value)
+    .then(res => console.log(res))
+    .catch(rej => console.log(rej.message))
     
     
 })
+
+// signup listener
+signUp.addEventListener('submit',(e) => {
+    e.preventDefault();
+    
+    firebase.auth()
+    .createUserWithEmailAndPassword(upEmailValue.value,upPassValue.value)
+    .then(res => console.log(res))
+    .catch(rej => console.log(rej))
+})
+
+
+// log out user
+// logOut.addEventListener('click',(e)=>{
+// console.log('s')
+// })
+console.log(signUp)
+console.log(logOut)
