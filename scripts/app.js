@@ -28,6 +28,7 @@ const lgin = document.querySelector('#loginDIV');
 const lgout = document.querySelector('#logoutDIV');
 
 
+
 // getting the login input values here
 const emailValue = document.querySelector('#emailAdd');
 const passValue = document.querySelector('#passAdd')
@@ -44,19 +45,30 @@ const msgUser = document.querySelector('#messageUser');
 
 
 // watching the state changing of the events
+
 auth.onAuthStateChanged(users => {
     if (users) {
-       
-        console.log('login')
+        // user is signed in
+        lgout.style.display = 'block';
+        lgin.style.display = 'none';
+        console.log('login');
+
+        let user = auth.currentUser;
+        if (user != null) {
+            let userEmail = user.email;
+            msgUser.innerHTML = `Welcome : ${userEmail}`;
+        }
     }
     else {
-        console.log('out')
-     
+        lgout.style.display = 'none';
+        lgin.style.display = 'block';
+
     }
 });
 
 // login listener
 logIn.addEventListener('submit', (e) => {
+
     e.preventDefault();
     auth.signInWithEmailAndPassword(emailValue.value, passValue.value)
         .then(res =>
@@ -69,6 +81,7 @@ logIn.addEventListener('submit', (e) => {
             // clearing the error after seconds
             setTimeout(clearDiv, 2700),
 
+
         )
         .catch(rej => {
 
@@ -77,12 +90,13 @@ logIn.addEventListener('submit', (e) => {
 
             // adding text here
             msg.textContent = rej.message;
-        
+
             // // clearing the error after seconds
             setTimeout(clearDiv, 2700);
+
         })
 
-        
+
 })
 
 // signup listener
@@ -98,6 +112,8 @@ signUp.addEventListener('submit', (e) => {
             // adding text here
             msg2.textContent = 'Account Created Successfully',
 
+
+          
             // clearing the error after seconds
             setTimeout(clearDiv, 2700),
         )
@@ -111,20 +127,19 @@ signUp.addEventListener('submit', (e) => {
             // clearing the error after seconds
             setTimeout(clearDiv, 2700);
         })
-        
+
 })
 
 
 // log out user
 logOut.addEventListener('click', (e) => {
-    // e.preventDefault();
     auth.signOut();
-    console.log('s')
+    console.log('logout')
 })
 
 
 // remove the div here
 let clearDiv = () => {
-    document.querySelector('#message').remove();
-    document.querySelector('#message2').remove();
+    document.querySelector('.alert').textContent='';
+    document.querySelector('.alert').classList.remove('alert')
 }
