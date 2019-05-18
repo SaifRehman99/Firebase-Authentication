@@ -26,14 +26,14 @@
     <title>Authentication</title>
 </head>
 
-<body >
+<body class="bgImg">
 
     <!-- starting from here -->
 
     <div class="container" id="loginDIV">
         <div class="row">
-            <div class="col-md-6 col-sm-6 mx-auto">
-                <div class="card card-body mt-5" >
+            <div class="col-md-6 col-sm-12 mx-auto">
+                <div class="card card-body mt-5 bg-light">
 
                     <h1 class="text-center">Login</h1>
                     <p id="message"></p>
@@ -61,12 +61,13 @@
                                     placeholder="Enter Your Password">
                             </div>
                         </div>
-                        <button class="btn btn-primary btn-block" type="submit" id="logIn">Login</button>
+                        <button class="btn btn-primary" type="submit" id="logIn">Login</button>
                     </form>
-                    <button class="btn btn-primary btn-block" data-toggle="modal"
-                        data-target="#exampleModalLong">SignUp</button>
 
-
+                    <div class="col">
+                        <button class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModalLong">SignUp</button>
+                    </div>
                     <!-- sign-up Modal -->
                     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
                         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -116,23 +117,24 @@
             </div>
         </div>
     </div>
-    <div class="" id="logoutDIV" >
-            <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-                    <a class="navbar-brand" href="#">
-                            <h3 id="messageUser"></h3>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                  
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <div class="text-center">
-                                </div>
-                                <button class="btn btn-primary ml-auto" id="logOut">LogOut</button>
+    <div class="" id="logoutDIV">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+            <a class="navbar-brand" href="#">
+                <h3 id="messageUser"></h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                    </div>
-                  </nav>
-          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="text-center">
+                </div>
+                <button class="btn btn-primary ml-auto" id="logOut">LogOut</button>
+
+            </div>
+        </nav>
+
     </div>
 
 
@@ -147,12 +149,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    </body>
-    <script src="scripts/app.js"></script>
-    <script>
-        $('#myModal').on('shown.bs.modal', function () {
-            $('#myInput').trigger('focus')
-        })
-    </script>
+</body>
+<script src="scripts/app.js"></script>
+<script>
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    })
+</script>
 
 </html>
