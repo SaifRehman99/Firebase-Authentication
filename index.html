@@ -26,14 +26,14 @@
     <title>Hello, world!</title>
 </head>
 
-<body">
+<body class="bg-dark">
 
     <!-- starting from here -->
 
-    <div class="container">
+    <div class="container" id="loginDIV">
         <div class="row">
             <div class="col-md-6 col-sm-6 mx-auto">
-                <div class="card card-body mt-5 border border-info rounded-top h-100">
+                <div class="card card-body mt-5 border border-info rounded-top h-100" >
 
                     <h1 class="text-center">Login</h1>
                     <p id="message"></p>
@@ -65,10 +65,9 @@
                     </form>
                     <button class="btn btn-primary btn-block" data-toggle="modal"
                         data-target="#exampleModalLong">SignUp</button>
-                    <button class="btn btn-primary mt-3" id="logOt">LogOut</button>
 
 
-                    <!-- signup Modal -->
+                    <!-- sign-up Modal -->
                     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
                         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -113,10 +112,15 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container" id="logoutDIV" >
+            <div class="text-center">
+                    <p id="messageUser"></p>
+                    <button class="btn btn-primary" id="logOut">LogOut</button>
+                </div>
     </div>
 
 

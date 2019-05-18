@@ -19,11 +19,13 @@ const auth = firebase.auth();
 //   getting the references of forms here
 const logIn = document.querySelector('#loginForm');
 const signUp = document.querySelector('#signUp');
-const logOut = document.querySelector('#logOt');
+const logOut = document.querySelector('#logOut');
 const createUser = document.querySelector('#createUser')
 
-// removing it first
-logOut.style.display = 'none';
+
+// getting the reference of login/logout div
+const lgin = document.querySelector('#loginDIV');
+const lgout = document.querySelector('#logoutDIV');
 
 
 // getting the login input values here
@@ -38,18 +40,18 @@ const upPassValue = document.querySelector('#passUP');
 // getting the reference of message div
 const msg = document.querySelector('#message');
 const msg2 = document.querySelector('#message2');
+const msgUser = document.querySelector('#messageUser');
 
 
 // watching the state changing of the events
 auth.onAuthStateChanged(users => {
     if (users) {
-        // window.location.replace('/login.html');
-        // preventDefault();
-        // location.replace('/login.html')
-        console.log(users.uid)
+       
+        console.log('login')
     }
     else {
-        window.location.assign('/index.html')
+        console.log('out')
+     
     }
 });
 
@@ -58,9 +60,6 @@ logIn.addEventListener('submit', (e) => {
     e.preventDefault();
     auth.signInWithEmailAndPassword(emailValue.value, passValue.value)
         .then(res =>
-            logOut.style.display = 'block',
-            signUp.style.display = 'none',
-
             // adding class here
             msg.className = 'alert alert-success text-center',
 
@@ -68,7 +67,7 @@ logIn.addEventListener('submit', (e) => {
             msg.textContent = 'Login Successful',
 
             // clearing the error after seconds
-            // setTimeout(clearDiv, 2700),
+            setTimeout(clearDiv, 2700),
 
         )
         .catch(rej => {
@@ -78,16 +77,12 @@ logIn.addEventListener('submit', (e) => {
 
             // adding text here
             msg.textContent = rej.message;
-
+        
             // // clearing the error after seconds
-            // setTimeout(clearDiv, 2700);
+            setTimeout(clearDiv, 2700);
         })
 
         
-            // clearing the error after seconds
-            setTimeout(clearDiv, 2700);
-
-
 })
 
 // signup listener
@@ -104,7 +99,7 @@ signUp.addEventListener('submit', (e) => {
             msg2.textContent = 'Account Created Successfully',
 
             // clearing the error after seconds
-            // setTimeout(clearDiv, 2700),
+            setTimeout(clearDiv, 2700),
         )
         .catch(rej => {
             // adding class here
@@ -114,23 +109,22 @@ signUp.addEventListener('submit', (e) => {
             msg2.textContent = rej.message;
 
             // clearing the error after seconds
-            // setTimeout(clearDiv, 2700);
+            setTimeout(clearDiv, 2700);
         })
         
-            // clearing the error after seconds
-            setTimeout(clearDiv, 2700);
 })
 
 
 // log out user
-// logOut.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     console.log('auth.signOut()')
-// })
+logOut.addEventListener('click', (e) => {
+    // e.preventDefault();
+    auth.signOut();
+    console.log('s')
+})
 
 
 // remove the div here
 let clearDiv = () => {
-    document.querySelector('.alert').remove();
-    // document.querySelector('.danger2').remove();
+    document.querySelector('#message').remove();
+    document.querySelector('#message2').remove();
 }
